@@ -1,0 +1,13 @@
+{% extends 'ToDoApp/base.html' %}
+{% block content %}
+
+<div class="header">
+    <a href="{% url 'tasks' %}" style="color: white;">戻る</a>
+</div>
+
+<form action="" method="post" style="padding: 20px;"> <!--methodはdeleteではない！-->
+    {% csrf_token %} <!--フォームに絶対必要-->
+    <p>{{task}}を本当に削除しますか？</p>
+    <input type="submit" value="削除" class="searchButton">
+</form>
+{% endblock content %}
